@@ -347,6 +347,8 @@ def plot_data(request):
     uri = 'data:image/png;base64,' + urllib.parse.quote(string)
     # uri = 'data:image/png;base64,'
     return render(request, 'plott.html', {'data': uri})
+
+# this is the test for git 
      
 
 
