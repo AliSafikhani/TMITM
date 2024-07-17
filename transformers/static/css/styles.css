@@ -1,0 +1,134 @@
+/* styles.css */
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header styling */
+h1,h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+
+/* Form styling */
+form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button, a.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+button:hover, a.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation menu styling */
+nav.menu {
+    margin-top: 20px;
+}
+
+.menu ol {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    display: inline-block;
+    position: relative;
+    margin-right: 15px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #007bff;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item a:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.menu-item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu .menu-item {
+    display: block;
+}
+
+.sub-menu .menu-item a {
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.MyImage{
+ transition: 0.7s;
+}
+
+.MyImage:hover{
+ border-radius: 50%;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="bg">
+    <div class="container mt-5">
+        <h1>DGA DATA</h1>
+        <form action="{% url 'dga_gas_adding_dga' %}" method="POST"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="manufacturer">H2 – hydrogen</label>
+                <input type="text" class="form-control" id="hydrogen" name="hydrogen" required>
+            </div>
+            <div class="form-group">
+                <label for="manufacturer">O2 – oxygen</label>
+                <input type="text" class="form-control" id="oxygen" name="oxygen" required>
+            </div>
+            <div class="form-group">
+                <label for="manufacturer">N2 – nitrogen</label>
+                <input type="text" class="form-control" id="nitrogen" name="nitrogen" required>
+            </div>
+            <div class="form-group">
+                <label for="manufacturer">CO – carbon monoxide</label>
+                <input type="text" class="form-control" id="carbon_monoxide" name="carbon_monoxide" required>
+            </div>
+            <div class="form-group">
+                <label for="operation_year">CO2 – carbon dioxide</label>
+                <input type="text" class="form-control" id="carbon_dioxide" name="carbon_dioxide" required>
+            </div>
+            <div class="form-group">
+                <label for="operation_year">CH4 – methane</label>
+                <input type="text" class="form-control" id="methane" name="methane" required>
+            </div>
+            <div class="form-group">
+                <label for="operation_year">C2H4 – ethylene</label>
+                <input type="text" class="form-control" id="ethylene" name="ethylene" required>
+            </div>
+            <div class="form-group">
+                <label for="operation_year">C2H6 – ethane</label>
+                <input type="text" class="form-control" id="ethane" name="ethane" required>
+            </div>
+            <div class="form-group">
+                <label for="operation_year">C2H2 – acetylene</label>
+                <input type="text" class="form-control" id="acetylene" name="acetylene" required>
+            </div>
+            <div class="form-group">
+                <label for="operation_year">C3H6 – propene</label>
+                <input type="text" class="form-control" id="propene" name="propene" required>
+            </div>
+            <div class="form-group">
+                <label for="operation_year">C3H8 – propane</label>
+                <input type="text" class="form-control" id="propane" name="propane" required>
+            </div>
+            <!-- <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" id="image" name="image" required>
+            </div> -->
+
+            <button type="submit" class="btn btn-primary">Add Transformer</button>
+        </form>
+        <hr>
+        <h1>DGA</h1>
+        <a href="{% url 'dga' %}" class="btn btn-primary">Go Back</a>
+    </div>
+    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    }
+    
+    .bg {
+    /* The image used */
+    background-image:url("{% static 'images/transformer.jpg' %}");
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    </style>
+</body>
+</html>

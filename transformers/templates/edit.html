@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Transformer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Edit Transformer</h1>
+        <form action="{% url 'edit_transformer' transformer.id %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ transformer.name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="voltage">Voltage</label>
+                <input type="text" class="form-control" id="voltage" name="voltage" value="{{ transformer.voltage }}" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location" name="location" value="{{ transformer.location }}" required>
+            </div>
+            <div class="form-group">
+                <label for="manufacturer">Manufacturer</label>
+                <input type="text" class="form-control" id="manufacturer" name="manufacturer" value="{{ transformer.manufacturer }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="{% url 'transformer_spec' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

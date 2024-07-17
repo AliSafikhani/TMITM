@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="bg">
+        <div class="container mt-5">
+            <h1>Transformers Specification List</h1>
+            {% if results %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Voltage</th>
+                            <th>Location</th>
+                            <th>Manufacturer</th>
+                            <th>operation year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for transformer in results %}
+                        <tr>
+                            <td>{{ transformer.name }}</td>
+                            <td>{{ transformer.voltage }}</td>
+                            <td>{{ transformer.location }}</td>
+                            <td>{{ transformer.manufacturer }}</td>
+                            <td>{{ transformer.operation_year }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No results found.</p>
+            {% endif %}
+            <a href="{% url 'transformer_spec' %}" class="btn btn-primary">Go Back</a>
+        </div>
+    </div>
+    </div>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                body, html {
+                height: 100%;
+                margin: 0;
+                }
+                
+                .bg {
+                /* The image used */
+                background-image: url("media/transformer.jpg");
+                
+                /* Full height */
+                height: 100%; 
+                
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                }
+            </style>
+        </head>
+
+    </div>
+</body>
+</html>
+
+<!-- <html lang="en">
+<head>
+    <title>Foto</title>
+</head> -->
+

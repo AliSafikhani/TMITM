@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="bg">
+    <div class="container mt-5">
+        <h1> Inter Transformer Test Spec</h1>
+        <!-- <form action="{% url 'dga_gas_adding'  %}" method="POST"  enctype="multipart/form-data"> -->
+        <form action="{% url 'dga_gas_adding'  %}" method="POST" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="sn">SERIAL NUMBER
+                    <br>
+                    serial number description : 1998112220 ( 1998 installed : 121 ABB , 220 MVA)
+                </label>
+                <input type="text" class="form-control" id="sn" name="sn" required>
+            </div>
+            <div class="form-group">
+                <label for="voltage">LABRATORY</label>
+                <input type="text" class="form-control" id="ilab" name="lab" required>
+            </div>
+            <div class="form-group">
+                <label for="location">METHOD OF TEST</label>
+                <input type="text" class="form-control" id="imot" name="mot" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Transformer</button>
+            <!-- <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form> -->
+        </form>
+
+        <hr>
+        <h1>DGA</h1>
+        <a href="{% url 'dga' %}" class="btn btn-primary">Go Back</a>
+    </div>
+    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    }
+    
+    .bg {
+    /* The image used */
+    background-image:url("{% static 'images/transformer.jpg' %}");
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    </style>
+</body>
+</html>

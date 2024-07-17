@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+  <div class="bg">
+    <div class="container mt-5">
+        <h1>Add Transformer test</h1>
+        <form action="/add" method="POST"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <a href="{% url 'dga' %}" class="btn btn-primary">DGA</a>
+            <a href="{% url 'fra' %}" class="btn btn-primary">FRA</a>
+            <a href="{% url 'resistance' %}" class="btn btn-primary">Resistance</a>
+            <a href="{% url 'tan_delta' %}" class="btn btn-primary">Tan Delta</a>
+        <hr>
+        <body>
+            
+          <div class="dropdown">
+            <ol>
+              <li class="menu-item">
+                <a href="#0" class="btn btn-primary">tests</a>
+                <ol class="sub-menu">
+                  </li>
+                    <a class="dropdown-item" href="{% url 'dga' %}">DGA</a>
+                    <a class="dropdown-item" href="{% url 'fra' %}">FRA</a>
+                    <a class="dropdown-item" href="{% url 'resistance' %}">RESISTANCE</a>
+                    <a class="dropdown-item" href="{% url 'tan_delta' %}">TANDELTA</a>
+
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+
+        <body>
+
+
+
+        <hr>
+            <a href="{% url 'index' %}" class="btn btn-primary">Go Back</a>
+        </form>
+        <hr>
+        <hr>
+    </div>
+  </div>
+  </div>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body, html {
+        height: 100%;
+        margin: 0;
+        }
+        
+        .bg {
+        /* The image used */
+        background-image: url("media/transformer.jpg");
+        
+        /* Full height */
+        height: 100%; 
+        
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        </style>
+    </head>
+  </div>
+  
+</body>
+</html>

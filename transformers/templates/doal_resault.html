@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="bg">
+    <div class="container mt-5">
+        <h1> power Transformer Test report</h1>
+        <!-- <form action="{% url 'dga_gas_adding'  %}" method="POST"  enctype="multipart/form-data"> -->
+        <form action="{% url 'doal'  %}" method="POST" >
+            {% csrf_token %}
+            <div class="form-group">
+                <!-- <label for="sn">ABB TRANSFORMER  -->
+                    <br>
+
+                    <h1>DGA DOUL PATTERN FOR TRANSFORMER : {{serial_number }}</h1>
+
+            <button type="submit" class="btn btn-primary"> visualization</button>
+
+        <!-- <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Plot 1</h2>
+                <img src="data:image/png;base64,{{ graph1 }}" alt="Plot 1" class="w3-circle" style="height: 500px" >
+
+            </div>
+            <br>
+            <div class="col-md-12">
+                <h2>Plot 2</h2>
+                <img src="data:image/png;base64,{{ graph2 }}" alt="Plot 2" class="img-fluid" style="height: 500px">
+            </div>
+            <div class="col-md-12">
+                <h2>Plot 3</h2>
+                <img src="data:image/png;base64,{{ graph3 }}" alt="Plot 3" class="img-fluid" style="height: 500px">
+            </div>
+
+        <a href="{% url 'dga' %}" class="btn btn-primary">Go Back</a>
+    </div> -->
+
+    <style>
+        .plot-image {
+            display: none;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .plot-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Show Images</h1>
+        <div class="form-group">
+            <label for="plotSelector">Select Plot to Display:</label>
+            <select id="plotSelector" class="form-control">
+                <option value="graph1">Duval triangle</option>
+                <option value="graph2">Failure Statistic</option>
+                <option value="graph3">Trend</option>
+            </select>
+        </div>
+        <div class="plot-container">
+            <img id="graph1" class="plot-image" src="data:image/png;base64,{{ graph1 }}" alt="Plot 1">
+            <img id="graph2" class="plot-image" src="data:image/png;base64,{{ graph2 }}" alt="Plot 2">
+            <img id="graph3" class="plot-image" src="data:image/png;base64,{{ graph3 }}" alt="Plot 3">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const selector = document.getElementById('plotSelector');
+            const images = document.querySelectorAll('.plot-image');
+            
+            // Function to show selected image and hide others
+            const showImage = (id) => {
+                images.forEach(image => {
+                    if (image.id === id) {
+                        image.style.display = 'block';
+                    } else {
+                        image.style.display = 'none';
+                    }
+                });
+            };
+
+            // Show the first image initially
+            showImage(selector.value);
+
+            // Add event listener to dropdown
+            selector.addEventListener('change', (event) => {
+                showImage(event.target.value);
+            });
+        });
+    </script>
+
+    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    }
+    
+    .bg {
+    /* The image used */
+    background-image:url("{% static 'images/transformer.jpg' %}");
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    </style>
+</body>
+</html>

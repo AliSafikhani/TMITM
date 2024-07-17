@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="bg">
+        <div class="container mt-5">
+            <h1>Transformer </h1>
+            <form action="{% url 'add'  %}" method="POST"  enctype="multipart/form-data">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Add New Transformer</button>
+            </form>
+            <hr>
+            <hr>
+            <h2>Transformer Test </h2>
+            <form action="{% url 'test'  %}" method="POST">
+                <button type="submit" class="btn btn-primary"> Test Report</button>
+            </form>
+            <hr>
+            <hr>
+            <h2>Transformers General  Specification </h2>
+            <form action="{% url 'transformer_spec'  %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Transformer Overview</button>
+            </form>
+            <hr>
+            <hr>
+        </div>
+    </div>
+
+    </div>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                body, html {
+                height: 100%;
+                margin: 0;
+                }
+                
+                .bg {
+                /* The image used */
+                background-image: url("media/transformer.jpg");
+                
+                /* Full height */
+                height: 100%; 
+                
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                }
+            </style>
+        </head>
+    </div>
+</body>
+</html>

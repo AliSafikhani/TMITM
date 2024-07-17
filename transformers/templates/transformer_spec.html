@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="bg">
+        <div class="container mt-5">
+            <!-- <h1>Add Transformer</h1>
+            <form action="/add" method="POST"  enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="voltage">Voltage</label>
+                    <input type="text" class="form-control" id="voltage" name="voltage" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="manufacturer">Manufacturer</label>
+                    <input type="text" class="form-control" id="manufacturer" name="manufacturer" required>
+                </div>
+                <div class="form-group">
+                    <label for="operation_year">operation_year</label>
+                    <input type="text" class="form-control" id="operation_year" name="operation_year" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" id="image" name="image" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Transformer</button>
+            </form>
+            <hr> -->
+            <hr>
+            <h2>Search Transformers</h2>
+            <!-- <form action="/search" method="POST"> -->
+            <form action="{% url 'search'  %}" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="voltage">Voltage</label>
+                    <input type="text" class="form-control" id="voltage" name="voltage">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" name="location">
+                </div>
+                <div class="form-group">
+                    <label for="manufacturer">Manufacturer</label>
+                    <input type="text" class="form-control" id="manufacturer" name="manufacturer">
+                </div>
+                <div class="form-group">
+                    <label for="operation_year">operation_year</label>
+                    <input type="text" class="form-control" id="operation_year" name="operation_year">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+            <hr>
+            <h2>Transformers List</h2>
+            <form action="{% url 'show'  %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Show</button>
+            </form>
+            <hr>
+            <hr>
+            <hr>
+            <a href="{% url 'index' %}" class="btn btn-primary">Go Back</a>
+            <hr>
+            <!-- <h2>Ali Safikhani</h2>
+            <form action="/search" method="POST">
+                <div class="form-group">
+                    <label for="name">Comment</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+            </form> -->
+        </div>
+    </div>
+    </div>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                body, html {
+                height: 100%;
+                margin: 0;
+                }
+                
+                .bg {
+                /* The image used */
+                background-image: url("media/transformer.jpg");
+                
+                /* Full height */
+                height: 100%; 
+                
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                }
+            </style>
+        </head>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="bg">
+        <div class="container mt-5">
+            <h1>Resistance Test Transformer </h1>
+            <a href="{% url 'test' %}" class="btn btn-primary">Go Back</a>
+        </div>
+    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    }
+    
+    .bg {
+    /* The image used */
+    background-image:url("{% static 'images/transformer.jpg' %}");
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    </style>
+</body>
+</html>
