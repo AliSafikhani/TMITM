@@ -43,8 +43,8 @@ urlpatterns = [
     path('test/fra', views.fra, name='fra'),
     path('test/resistance', views.resistance, name='resistance'),
     path('test/tan_delta', views.tan_delta, name='tan_delta'),
-    path('upload/', views.upload_file, name='upload_file'),
-    path('plot/', views.plot_data, name='plot_data'),
+    path('test/upload/', views.upload, name='upload'),
+    path('test/plott/', views.plott, name='plott'),
 
 ]
 

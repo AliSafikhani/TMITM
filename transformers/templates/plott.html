@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plot Time Series Data</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1>Time Series Data Plot</h1>
-        <img src="{{ data }}" alt="Time Series Data Plot">
-    </div>
+    <div class="bg">
+        <hr>
+        <a href="{% url 'upload' %}" class="btn btn-primary">Go Back</a>
+        </form>
+        <hr>
+
+        <style>
+            .plot-image {
+                display: none;
+                width: 100%;
+                max-width: 600px;
+                margin: 20px auto;
+            }
+            .plot-container {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1>Time Series Data Plot</h1>
+            <div class="form-group">
+                <label for="plotSelector">Select Plot to Display:</label>
+                <select id="plotSelector" class="form-control">
+                    <option value="plotr1">Phase R</option>
+                    <option value="plotr2">Phase S</option>
+                    <option value="plotr3">Phase T</option>
+                </select>
+            </div>
+            <div class="plot-container">
+                <img id="plotr1" class="plot-image" src="data:image/png;base64,{{ plotr1 }}" alt="Plot 1">
+                <img id="plotr2" class="plot-image" src="data:image/png;base64,{{ plotr2 }}" alt="Plot 2">
+                <img id="plotr3" class="plot-image" src="data:image/png;base64,{{ plotr3 }}" alt="Plot 3">
+            </div>
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const selector = document.getElementById('plotSelector');
+                const images = document.querySelectorAll('.plot-image');
+                
+                // Function to show selected image and hide others
+                const showImage = (id) => {
+                    images.forEach(image => {
+                        if (image.id === id) {
+                            image.style.display = 'block';
+                        } else {
+                            image.style.display = 'none';
+                        }
+                    });
+                };
+    
+                // Show the first image initially
+                showImage(selector.value);
+    
+                // Add event listener to dropdown
+                selector.addEventListener('change', (event) => {
+                    showImage(event.target.value);
+                });
+            });
+        </script>
+    
+        </div>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body, html {
+        height: 100%;
+        margin: 0;
+        }
+        
+        .bg {
+        /* The image used */
+        background-image:url("{% static 'images/transformer.jpg' %}");
+        /* Full height */
+        height: 100%; 
+        
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        </style>
 </body>
 </html>

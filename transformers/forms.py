@@ -14,8 +14,7 @@ class SerialNumberForm(forms.Form):
 
 class FileUploadForm(forms.Form):
     file = forms.FileField()
+# class UploadFileForm(forms.Form):
+#     file = forms.FileField()
 
 
-
-# class SearchForm(forms.Form):
-#     query = forms.CharField(max_length=100, required=False, label='Search')
